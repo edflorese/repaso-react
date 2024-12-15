@@ -1,17 +1,18 @@
 import { useAuthContext } from "../context/AuthContext";
+import MapComponent from "./MapComponent";
 
 export default function LoginPage() {
   const { state, loginEmailWithPassword, logoutOfAccount } = useAuthContext();
   if (state === 1) {
     return (
       <>
-        <h1>Maps of Valorant</h1>
         <button
           onClick={() => logoutOfAccount()}
-          className="bg-red-500 text-white rounded-2xl mt-2 p-2"
+          className="bg-red-500 text-white rounded-2xl mt-2 p-2 ml-2"
         >
           Logout
         </button>
+        <MapComponent />
       </>
     );
   }
